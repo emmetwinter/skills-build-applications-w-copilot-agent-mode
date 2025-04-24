@@ -19,6 +19,7 @@ class Command(BaseCommand):
         db.teams.insert_many(data['teams'])
         db.activity.insert_many(data['activities'])
         db.leaderboard.insert_many(data['leaderboard'])
+        # Populate the workouts collection
         db.workouts.insert_many(data['workouts'])
 
         self.stdout.write(self.style.SUCCESS('Database populated with test data.'))
